@@ -5,8 +5,7 @@ import { MainSidebarComponent } from './components/main-sidebar/main-sidebar.com
 import { ContentWrapperComponent } from './components/content-wrapper/content-wrapper.component';
 import { ControlSidebarComponent } from './components/control-sidebar/control-sidebar.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,17 +13,15 @@ import { MainFooterComponent } from './components/main-footer/main-footer.compon
     MainSidebarComponent,
     ContentWrapperComponent,
     ControlSidebarComponent,
-    MainFooterComponent
+    MainFooterComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule, RouterModule],
   exports: [
     MainHeaderComponent,
     MainSidebarComponent,
     ContentWrapperComponent,
     ControlSidebarComponent,
-    MainFooterComponent
-  ]
+    MainFooterComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
