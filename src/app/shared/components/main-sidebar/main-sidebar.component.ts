@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { environment } from 'src/environments/environment';
 import { Menu } from '../../interfaces/menu.interface';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-main-sidebar',
@@ -7,117 +10,26 @@ import { Menu } from '../../interfaces/menu.interface';
   styleUrls: ['./main-sidebar.component.scss'],
 })
 export class MainSidebarComponent implements OnInit {
-  public menu: Menu[] = [
-    {
-      title: 'Estadística',
-      childs: null,
-      label: null,
-      icon: null,
-      routerLink: null,
-    },
-    {
-      title: null,
-      label: 'Dashboard',
-      routerLink: '',
-      icon: 'nav-icon fas fa-chart-line',
-      childs: null,
-    },
-    {
-      title: 'Usuarios',
-      childs: null,
-      label: null,
-      icon: null,
-      routerLink: null,
-    },
-    {
-      title: null,
-      label: 'Clientes',
-      routerLink: null,
-      icon: 'nav-icon fas fa-users',
-      childs: [
-        {
-          label: 'Agregar nuevo',
-          title: null,
-          routerLink: '',
-          icon: null,
-          childs: null,
-        },
-        {
-          label: 'Gestionar',
-          title: null,
-          routerLink: '',
-          icon: null,
-          childs: null,
-        },
-      ],
-    },
-    {
-      title: null,
-      label: 'Empleados',
-      routerLink: null,
-      icon: 'nav-icon fas fa-user-tie',
-      childs: [
-        {
-          label: 'Agregar nuevo',
-          title: null,
-          routerLink: '',
-          icon: null,
-          childs: null,
-        },
-        {
-          label: 'Gestionar',
-          title: null,
-          routerLink: '',
-          icon: null,
-          childs: null,
-        },
-        {
-          label: 'Roles',
-          title: null,
-          routerLink: '',
-          icon: null,
-          childs: null,
-        },
-      ],
-    },
-    {
-      title: 'Reportes',
-      childs: null,
-      label: null,
-      icon: null,
-      routerLink: null,
-    },
-    {
-      title: null,
-      label: 'Generar',
-      routerLink: '',
-      icon: 'nav-icon fas fa-file-pdf',
-      childs: null,
-    },
-    {
-      title: 'Configuración',
-      childs: null,
-      label: null,
-      icon: null,
-      routerLink: null,
-    },
-    {
-      title: null,
-      label: 'General',
-      routerLink: '',
-      icon: 'nav-icon fas fa-cogs',
-      childs: null,
-    },
-    {
-      title: null,
-      label: 'Seguridad',
-      routerLink: '',
-      icon: 'nav-icon fas fa-lock',
-      childs: null,
-    },
-  ];
+  get userProfile() {
+    return this._authService.userProfile;
+  }
 
-  constructor() {}
+  get userInitialLetter() {
+    return this._authService.initialLetter;
+  }
+
+  get companyName() {
+    return environment.companyName;
+  }
+
+  get menu() {
+    return this._sidebarService.menu;
+  }
+
+  constructor(
+    private _sidebarService: SidebarService,
+    private _authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
 }

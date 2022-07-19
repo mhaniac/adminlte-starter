@@ -6,6 +6,8 @@ import { ContentWrapperComponent } from './components/content-wrapper/content-wr
 import { ControlSidebarComponent } from './components/control-sidebar/control-sidebar.component';
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
 import { RouterModule } from '@angular/router';
+import { SubHeaderComponent } from './components/sub-header/sub-header.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { RouterModule } from '@angular/router';
     ContentWrapperComponent,
     ControlSidebarComponent,
     MainFooterComponent,
+    SubHeaderComponent,
+    BreadcrumbsComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -22,6 +26,8 @@ import { RouterModule } from '@angular/router';
     ContentWrapperComponent,
     ControlSidebarComponent,
     MainFooterComponent,
+    SubHeaderComponent,
+    BreadcrumbsComponent,
   ],
 })
 export class SharedModule {}
