@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { environment } from 'src/environments/environment';
-import { Menu } from '../../interfaces/menu.interface';
 import { SidebarService } from '../../services/sidebar.service';
 
 @Component({

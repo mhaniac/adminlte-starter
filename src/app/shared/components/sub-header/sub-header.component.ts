@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-sub-header',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sub-header.component.scss'],
 })
 export class SubHeaderComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  get pageTitle() {
+    return this._sidebarSerivice.pageTitle;
+  }
+
+  constructor(
+    private _sidebarSerivice: SidebarService
+  ) {}
+
+  ngOnInit(): void {
+  }
 }

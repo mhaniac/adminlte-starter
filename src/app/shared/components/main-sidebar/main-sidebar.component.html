@@ -1,32 +1,20 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <div class="brand-link text-center d-flex align-items-center flex-column">
-    <img
-      src="../../../../assets/images/logo.png"
-      alt="LOGO"
-      class="brand-image elevation-3 d-block bg-info my-2"
-    />
+  <div class="brand-link">
+    <img src="../../../../assets/images/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">{{ companyName }}</span>
   </div>
 
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div
-      class="user-panel mt-3 pb-3 mb-3 d-flex flex-column align-items-center"
-      *ngIf="userProfile"
-    >
-      <div class="image text-center">
-        <p
-          class="img-circle elevation-2 d-block bg-primary mb-0"
-          [style]="{ width: '36px', height: '36px', 'font-size': '24px' }"
-        >
-          {{ userInitialLetter }}
-        </p>
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="../../../../assets/images/img_avatar.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <p class="d-block mb-0">{{ userProfile.name }}</p>
+        <div class="d-block text-white">{{ userProfile.name }}</div>
       </div>
     </div>
 
