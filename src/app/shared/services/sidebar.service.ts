@@ -16,7 +16,7 @@ export class SidebarService {
     {
       title: null,
       label: 'Dashboard',
-      routerLink: '',
+      routerLink: '/dashboard',
       icon: 'nav-icon fas fa-chart-line',
       childs: null,
     },
@@ -36,7 +36,7 @@ export class SidebarService {
         {
           label: 'Agregar nuevo',
           title: null,
-          routerLink: '',
+          routerLink: '/dashboard/customer/add',
           icon: null,
           childs: null,
         },

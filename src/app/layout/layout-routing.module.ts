@@ -9,14 +9,22 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('../stadistic/stadistic.module').then(m => m.StadisticModule)
-      }
-    ]
-  }
+        loadChildren: () =>
+          import('../stadistic/stadistic.module').then(
+            (m) => m.StadisticModule
+          ),
+      },
+      {
+        path: 'customer',
+        loadChildren: () =>
+          import('../customer/customer.module').then((m) => m.CustomerModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LayoutRoutingModule { }
+export class LayoutRoutingModule {}
